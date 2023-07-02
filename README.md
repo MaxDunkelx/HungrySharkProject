@@ -1,55 +1,24 @@
 OOP2 – project – Hungry shark
-Max Dunkel: 321559775
-Philip Berlin: 316339761
+Max Dunkel: 
+Philip Berlin
 
-Game description:
-Using arrow keys to move a shark (player's character) and eating sea creatures to get bigger and eat smaller sharks.
-To win the game the players needs to survive enough time till all the other sharks hit mine or eating by the player.
-Sharks will swim towards off you when there are in a certain distance away from your shark.
-If not eating, hitting a mine or getting hit by another sharks the player's health reduces, 
-when health gets to 0 the player loose.
-Design:
-Base class GameObj, which gives to all static and movable objects. 
-The Controller is the game manager, start the game and managing all the Continuity/progress of the game. The game load the level from generic files name and insert them to the Board members.  The Board, held in the Controller, holds the game objects and responsible for most of the game actions, such as movement, collisions etc.
-class enemyShark inherits from class moveable and class enemy inherits from class enemy shark. 
+Game Description:
+Dive into an exhilarating underwater adventure with our captivating game! Take control of a mighty shark,
+using arrow keys to maneuver through the vast ocean. Your objective? 
+Devour smaller sea creatures to grow larger and feast upon rival sharks. To emerge victorious, you must survive against relentless opponents and strategically outmaneuver them.
 
-List of class:
-Board – class to store and manage board of the game, holds all the entities of the game.
-Controller – class that run and manage the game.
-GameObject – all entities come from here & sprite members.
-macros (no cpp) – holds all the game consts.
-Menu - Class of the game menu, loads button: start, help, exit.
-Movable - all mobile objects come from here.
-player – character of the game and his movements.
-Static – all immobile objects come from here.
-Gamestats – to display the game stats.
-Textures - textures singleton resource.
-Text – setting in game text.
-stone – acts as  wall object.
-enemyShark – enemy that chases the players character (using dynamic cast).
-enemy – sets movement for enemy shark.
-Sounds - sound singleton resource.
-LifeBar – health status of the player become fuller when shark eat and reduced when hit mine or another shark.
-Animation – animation base class.
-Collision - outsource for sub class Author: Nick (original version), ahnonay (SFML2 compatibility)
-CollisionHandling – main class for collision between objects
-Crab, jelly, Lionfish, Nemo, Orchid, PerotFish, PufFish -  each of them is sets the movement of sea creatures.
-Mine – static object that explodes when detecting collision with any shark.
-explode – explosion animation after hitting a mine sits under static objects.
-Spawn – set of animation on players starting point.
-Splash – set of animation of waves as static object. 
+As you navigate the depths, be wary of treacherous mines and avoid colliding with other sharks. Your health is paramount, decreasing with each mishap or encounter. A depleting health bar brings you closer to defeat, so employ swift reflexes and cunning tactics to ensure your survival.
 
-Main data structures:
-Vectors of unique_ptr – 1) hold static object 2) hold fishes 3) hold sharks.
-Vector of chars - to load the level once, thus able to restart level from vector.
-Notable algorithms:
-Basic physics-based Movement algorithm for the moveable.
-Fishes and other sea creatures change direction (up/down/left/right).
-Smart enemies:  if the enemy shark at certain distance from the player he start moving towards him else moving randomly and eating fish.
-The game collision method is PixelPerfectTest.
-Known bugs:
-Unknown.
-Other comments:
-We tried to create layer background combined of 4 images it worked to some degree.
-Link to YouTube
+The game boasts an immersive design that leverages various classes. At its core is the "GameObj" class, serving as the foundation for all static and movable entities. Orchestrating the gameplay is the "Controller," a masterful game manager responsible for initiating the adventure and overseeing its progression. The "Board," nestled within the Controller, houses the diverse array of game objects and drives pivotal actions such as movement and collisions.
 
+Among the captivating classes is "enemyShark," a subclass inheriting from "moveable," and "enemy," which, in turn, derives from "enemyShark." These classes embody the relentless pursuit of rival sharks, skillfully tracking and homing in on your shark when within a certain distance. With captivating intelligence, enemies dynamically adapt their movements, amplifying the challenge and excitement.
+
+Immersing players in a visually stunning world, our game encompasses various enthralling entities. From agile crabs and mesmerizing jellyfish to majestic lionfish and iconic Nemo, each sea creature exudes distinct movements and behaviors, adding depth to the gameplay. The ocean's inhabitants dance in harmony with your shark's movements, creating an immersive and realistic experience.
+
+Utilizing cutting-edge algorithms, our game implements physics-based movement for the shark and other moveable entities. Fish and sea creatures elegantly shift their trajectories, responding to your presence or following predefined patterns. Intelligent enemies utilize advanced strategies, approaching with calculated precision or unleashing unpredictable maneuvers.
+
+Our collision system employs a meticulous PixelPerfectTest algorithm, ensuring accurate and seamless interactions between objects. This enhances gameplay realism and guarantees that every collision has tangible consequences.
+
+Immerse yourself in a richly detailed underwater environment, where vibrant animations and meticulously crafted sound effects enhance the overall experience. With a seamless blend of stunning visuals, captivating gameplay, and dynamic challenges, our game promises hours of entertainment and adrenaline-pumping excitement.
+
+Embark on this thrilling underwater odyssey and prove your dominance in the vast expanse of the ocean. Can you emerge as the apex predator, conquering all adversaries and claiming victory? Prepare to dive into an unforgettable gaming experience that will leave you craving for more!
